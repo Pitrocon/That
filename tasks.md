@@ -14,6 +14,15 @@
 - [x] Consolidar arquétipos e padrões de UX/conversão em `Context/benchmarks-visuais.md` e `criadores-de-site/.kiro/steering/benchmarks-visuais.md`
 - [x] Vincular catálogo de benchmarks ao `site-pesquisa-nichos` e validar no `kiro-cli`
 
+## Onda 1 — Core da Fábrica de Sites & Vitrine Apple Pro Dark (`criadores-de-site/`)
+- [x] Criar specs da Onda 1 e briefing visual Apple Pro Dark (`criadores-de-site/briefings/apple-dark-showcase.md`)
+- [x] Inicializar stack Next.js 15 App Router + TypeScript estrito + Tailwind 3.4 + Zod + Lucide + ESLint
+- [x] Implementar camada de domínio (`lib/leads-schema.ts`, `lib/rate-limit.ts`, `lib/whatsapp.ts`, `data/site-content.ts`) e endpoint `POST /api/leads`
+- [x] Implementar UI Apple Dark (`Navbar`, `HeroAppleDark`, `BentoGrid`, `NicheShowcase`, `ProcessAndFaq`, `LeadCaptureForm`, `Footer`) e SEO (`metadata`, JSON-LD, `sitemap.ts`, `robots.ts`)
+- [x] Criar testes (`tests/leads.test.ts`), pacote de portfólio (`docs/pacote-portfolio-onda-1.md`) e rodar `typecheck`, `lint`, `test` (8/8) e `build`
+- [x] Inspecionar em navegador real (`http://localhost:3000` em `1440x900` e `390x844`), corrigir overflow mobile/quebra de abas e revalidar após rebuild
+- [x] Atualizar memória viva e realizar commit da Onda 1
+
 ## Próximas Ondas Planejadas
-- [ ] **Onda 1 — Core da Fábrica de Sites (`criadores-de-site/`):** scaffolding web (Next.js App Router + TypeScript + Tailwind + shadcn/ui), sistema de tokens por nicho e contrato de captura de leads
-- [ ] **Onda 2 — Piloto End-to-End (1º Nicho + Pacote Social Media):** gerar site completo de um nicho piloto + pacote editorial/prospecção correspondente via `Context/contrato-handoff-site-social.md`
+- [ ] **Onda 2 — Ativação Social Media & Prospecção (`criadores-de-social-media/`):** gerar calendário editorial, copies e abordagem DM a partir de `criadores-de-site/docs/pacote-portfolio-onda-1.md`
+- [ ] **Onda 3 — 1º Site Exclusivo de Nicho / Integração Externa:** construir aplicação dedicada para o primeiro cliente/nicho escolhido e conectar persistência externa de leads (quando credenciais/webhook forem definidos)

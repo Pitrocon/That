@@ -66,3 +66,41 @@
 - Validação de `site-pesquisa-nichos.json` (UTF-8 sem BOM, `kiro-cli agent validate`, `RES_FAIL=0` e frontmatter YAML do novo steering).
 
 **NÃO verificado:** valores via `getComputedStyle` / `page.evaluate` (indisponível no sandbox do navegador; cores/fontes obtidas de CSS/stylesheets e inspeção visual desktop `1440x900`); renderização em viewport mobile desses 5 sites; pontuação Lighthouse/Core Web Vitals.
+
+---
+
+## 2026-11-18 — Onda 1: Vitrine e Fábrica de Sites no Estilo Apple Pro Dark
+
+### Decisões Técnicas e Visuais Aprovadas
+- **Arquétipo Escolhido:** Estética **Apple Pro Dark** (`#000000` obsidiana, `#0a0a0c` / `#121216` / `#16161b` grafite/titânio, `#f5f5f7` / `#a1a1aa`, ação `#0071e3`, detalhe `#e8c97a`), com botão acessível de pausa de animação (`Pausar animação` / `Retomar animação`) e suporte nativo a `prefers-reduced-motion`.
+- **Stack em `criadores-de-site/`:** Next.js `15.5.29` (App Router), React `19`, TypeScript estrito, Tailwind CSS `3.4.17`, Zod, Lucide React, ESLint 9 (`next lint`) e Node test runner com `tsx`.
+- **Vitrine Multi-Nicho (`[MODELO DEMONSTRATIVO / SEED]`):** Alternância interativa entre os 3 nichos da planilha base (*Estúdio de Tatuagem*, *Músico / Banda*, *Clínica de Estética*), pré-preenchendo o formulário de solicitação.
+- **Segurança & Contrato de Leads (`POST /api/leads`):** Validação Zod, honeypot oculto (`websiteHoneypot`), rate limit em memória (`5 req/min` por IP), sanitização contra formula injection (`=`, `+`, `-`, `@`, `\t`, `\r`) e retorno nas 11 colunas de `Context/modelo-planilha-leads.csv` com `persistedExternally: false` (transparente quanto à ausência de integração externa nesta onda).
+- **Correções pós-inspeção em navegador:** Adicionado `min-w-0` + `whitespace-pre-wrap break-words` no container/bloco `<pre>` de resposta do formulário (eliminando overflow horizontal mobile pós-envio) e `shrink-0` + `whitespace-nowrap` nas abas de nicho (mantendo as 3 abas em linha única no desktop `1440x900`).
+
+### Arquivos Criados / Alterados
+- **Specs & Briefing:**
+  - `.kiro/specs/onda-1-apple-dark-showcase/{requirements,design,tasks}.md`
+  - `criadores-de-site/.kiro/specs/onda-1-apple-dark-showcase/{requirements,design,tasks}.md`
+  - `criadores-de-site/briefings/apple-dark-showcase.md`
+  - `criadores-de-site/docs/pacote-portfolio-onda-1.md`
+- **Configuração & Domínio (`criadores-de-site/`):**
+  - `package.json`, `package-lock.json`, `tsconfig.json`, `next.config.mjs`, `tailwind.config.ts`, `postcss.config.mjs`, `eslint.config.mjs`
+  - `lib/leads-schema.ts`, `lib/rate-limit.ts`, `lib/whatsapp.ts`, `data/site-content.ts`, `tests/leads.test.ts`
+- **UI & Rotas (`criadores-de-site/`):**
+  - `components/ui/pill-button.tsx`
+  - `components/sections/{navbar,hero-apple-dark,bento-grid,niche-showcase,process-and-faq,lead-capture-form,showcase-and-capture,footer}.tsx`
+  - `app/{globals.css,layout.tsx,page.tsx,sitemap.ts,robots.ts}` e `app/api/leads/route.ts`
+- **Memória Viva:** `tasks.md`, `tasks-agentes.md`, `memory.md`
+
+### Comandos de Verificação Executados (com Resultado Exato)
+- `npm run typecheck` (`tsc --noEmit`): exit code `0` (0 erros).
+- `npm run lint` (`next lint`): exit code `0` (`✔ No ESLint warnings or errors`).
+- `npm test` (`node --import tsx --test tests/*.test.ts`): `8/8` testes passando (`0` falhas, `0` ignorados, `160.791ms`).
+- `npm run build` (`next build`): exit code `0`; rotas geradas: `/` (static `10.7 kB`), `/_not-found`, `/api/leads` (dynamic), `/robots.txt`, `/sitemap.xml`.
+- Auditoria de UTF-8 sem BOM em todos os `.json` fora de `node_modules`/`.next`: `JSON_CHECKED=19 BOM_FAIL=0`.
+- Inspeção real em navegador (`http://localhost:3000` via subagente `browser`, `BROWSER_HOST_FACTS`: `visited_origins: http://localhost:3000`, `blocked_origins: none`):
+  - **1ª rodada:** validou Hero, navbar sticky, alternância de animação, 3 abas de nicho, preenchimento automático e `POST /api/leads` (`201`), detectando overflow horizontal mobile no `<pre>` pós-envio e quebra de linha da 3ª aba no desktop.
+  - **2ª rodada (pós-correção e rebuild):** confirmou as 3 abas em linha única no desktop (`1440x900`) e o `<pre>` contido sem overflow horizontal no mobile (`390x844`), `POST /api/leads` `201` e `0` falhas de rede.
+
+**NÃO verificado:** medição Lighthouse / Core Web Vitals; persistência externa em Google Sheets ou disparo de webhook real (`persistedExternally: false`); entrega real de mensagem no WhatsApp (usa número placeholder `5511999990000`); publicação em domínio com HTTPS/SSL e indexação no Google Search Console; validação em dispositivos físicos iOS/Android reais.

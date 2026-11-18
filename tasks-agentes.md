@@ -2,12 +2,12 @@
 
 | Frente / Código | Agente Kiro | Responsabilidade na Onda Atual | Critério de Aceite | Status | Conclusão |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **ORQ** | `orquestrador-geral` | Estruturar hub raiz `.kiro/`, `Context/`, contrato de handoff, memória viva, auditoria cruzada e save em Git | Agente validado via `kiro-cli`, memória viva atualizada e commit limpo em português | Concluído | 2026-11-18 |
-| **SITE-PESQ** | `site-pesquisa-nichos` | Incorporar catálogo dos 5 benchmarks visuais (`Context/benchmarks-visuais.md` + steering `benchmarks-visuais.md`) | Agente validado no `kiro-cli` sem BOM e steering com frontmatter YAML | Concluído | 2026-11-18 |
-| **SITE-ARQ** | `site-arquitetura` | Definir agente V3 + skills `definir-arquitetura-web` e `integrar-captura-leads` | JSON sem BOM validado no `kiro-cli` + contrato de payload compatível com planilha | Concluído | 2026-11-18 |
-| **SITE-FRONT** | `site-frontend` | Definir agente V3 + skill `criar-secao-nicho` + steering UI | JSON sem BOM validado no `kiro-cli` + escopo mobile-first e tokens documentados | Concluído | 2026-11-18 |
-| **SITE-SEO** | `site-design-seo` | Definir agente V3 + skill `otimizar-seo-a11y` | JSON sem BOM validado no `kiro-cli` + checklist WCAG AA, Schema.org e CWV | Concluído | 2026-11-18 |
-| **SITE-QA** | `site-qa` | Definir agente V3 + skill `validar-build-qa` + steering/hooks de QA | JSON sem BOM validado no `kiro-cli` + regra explícita de `NÃO verificado` | Concluído | 2026-11-18 |
+| **ORQ** | `orquestrador-geral` | Coordenar specs da Onda 1, contrato de handoff (`pacote-portfolio-onda-1.md`), memória viva e commit Git | Specs atualizadas, validações executadas e commit limpo da Onda 1 em português | Concluído | 2026-11-18 |
+| **SITE-PESQ** | `site-pesquisa-nichos` | Definir `briefings/apple-dark-showcase.md` (Apple Pro Dark + tokens WCAG + 3 nichos seed) | Briefing completo e contraste documentado | Concluído | 2026-11-18 |
+| **SITE-ARQ** | `site-arquitetura` | Configurar stack Next.js 15/TS/Tailwind 3.4, `lib/*`, `data/site-content.ts` e `app/api/leads/route.ts` | Zod + sanitização anti-injeção + 11 colunas + rate limit + honeypot | Concluído | 2026-11-18 |
+| **SITE-FRONT** | `site-frontend` | Implementar `components/ui/pill-button.tsx` e seções Apple Dark responsivas + correção pós-QA mobile/abas | Interações validadas em `1440x900` e `390x844` sem overflow horizontal | Concluído | 2026-11-18 |
+| **SITE-SEO** | `site-design-seo` | Configurar `app/globals.css`, `app/layout.tsx` (metadata + JSON-LD), `sitemap.ts` e `robots.ts` | Build gerando `/`, `/sitemap.xml` e `/robots.txt` sem erros | Concluído | 2026-11-18 |
+| **SITE-QA** | `site-qa` | Criar `tests/leads.test.ts`, `docs/pacote-portfolio-onda-1.md`, rodar suíte QA e inspeção browser | `tsc`, `lint`, `test` (8/8), `build`, BOM=0 e revalidação browser passando | Concluído | 2026-11-18 |
 | **SOC-EST** | `social-estrategista` | Definir agente V3 + skill `planejar-calendario-editorial` + steering de posicionamento | JSON sem BOM validado no `kiro-cli` + alinhamento ao contrato de portfólio | Concluído | 2026-11-18 |
 | **SOC-TREND** | `social-pesquisa-trends` | Definir agente V3 + skill `pesquisar-pautas-virais` | JSON sem BOM validado no `kiro-cli` + foco em nichos sem site | Concluído | 2026-11-18 |
 | **SOC-COPY** | `social-copywriter` | Definir agente V3 + skill `escrever-copy-conversao` + steering de formatos | JSON sem BOM validado no `kiro-cli` + hooks, AIDA/PAS e CTAs DM | Concluído | 2026-11-18 |
