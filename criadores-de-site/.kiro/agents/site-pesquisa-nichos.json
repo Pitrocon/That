@@ -40,6 +40,7 @@
     "file://README.md",
     "file://.kiro/steering/**/*.md",
     "file://../Context/contrato-handoff-site-social.md",
+    "file://../Context/benchmarks-visuais.md",
     "skill://.kiro/skills/pesquisar-nicho-visual/SKILL.md"
   ],
   "includeMcpJson": true,

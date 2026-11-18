@@ -42,3 +42,27 @@
   - `criadores-de-social-media/`: listou `social-copywriter`, `social-criativos`, `social-estrategista`, `social-pesquisa-trends`, `social-prospeccao-sdr` — todos como `Workspace (v3 format)`.
 
 **NÃO verificado:** execução interativa de sessões `kiro-cli chat --v3 --agent <nome>` com prompts reais de produção; disparo em runtime dos hooks (`PostFileSave` e `Stop`) no Kiro IDE/CLI; existência de código de aplicação web/Next.js, `tsc`, `eslint` ou `build` (ainda não há app web nesta Onda 0); coleta ou validação de leads/métricas reais no Instagram ou em navegador real.
+
+---
+
+## 2026-11-18 — Onda 0.5: Benchmarks Visuais de Referência
+
+### Decisões Técnicas e Visuais Aprovadas
+- Catalogados 5 arquétipos visuais reais para orientar a diversidade estética e conversão em `criadores-de-site/` (sem cópia de marcas):
+  1. **B2B Industrial / Deep-Tech** (`https://integral-imi.com/`): base escura `#000a19`, acento laranja, hero com fórmula `X + Y + Z`, cards claros de solução e dupla prova social (clientes + prêmios).
+  2. **Serviço Local / Luxo Artesanal Mobile-First** (`https://tattooonda.com.br/`): coluna estreita (`480px`), preto + dourado `#C9A84C`, duplo CTA acima da dobra, 3 métricas imediatas, FAQ/guias anti-objeção e WhatsApp flutuante (evitando splash bloqueante por padrão).
+  3. **Vitrine Minimalista de Produto** (`https://www.apple.com/`): alternância claro/escuro, grid `2xN`, par padrão de CTAs (*Saiba mais* + *Comprar*) e controle visível de pausa de animação.
+  4. **Editorial Técnico / Storytelling** (`https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/`): leitura estreita em fundo branco, TOC sticky lateral, barra de progresso no scroll, áudio integrado e coluna destaque em tabelas.
+  5. **Enterprise Tech Dark & High-Contrast** (`https://www.amd.com/pt.html`): preto `#000000` com acento ciano único, hero com 3 cards de acesso rápido na base, faixa de logos monocromática e cards de portfólio com links diretos.
+
+### Arquivos Criados / Alterados
+- `Context/benchmarks-visuais.md`
+- `criadores-de-site/.kiro/steering/benchmarks-visuais.md`
+- `criadores-de-site/.kiro/agents/site-pesquisa-nichos.json`
+- `tasks.md`, `tasks-agentes.md`, `memory.md`
+
+### Comandos de Verificação Executados (com Resultado Exato)
+- Inspeção visual em navegador via subagente `browser` (origens verificadas em `BROWSER_HOST_FACTS`: `https://integral-imi.com`, `https://tattooonda.com.br`, `https://www.apple.com`, `https://blog.google`, `https://www.amd.com`; `blocked_origins: none`).
+- Validação de `site-pesquisa-nichos.json` (UTF-8 sem BOM, `kiro-cli agent validate`, `RES_FAIL=0` e frontmatter YAML do novo steering).
+
+**NÃO verificado:** valores via `getComputedStyle` / `page.evaluate` (indisponível no sandbox do navegador; cores/fontes obtidas de CSS/stylesheets e inspeção visual desktop `1440x900`); renderização em viewport mobile desses 5 sites; pontuação Lighthouse/Core Web Vitals.

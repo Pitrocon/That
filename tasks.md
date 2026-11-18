@@ -9,6 +9,11 @@
 - [x] Validar ausência de UTF-8 BOM, sintaxe JSON, resolução de `skill://`/`file://`, `kiro-cli agent validate` e `kiro-cli agent list` nos 3 escopos
 - [x] Inicializar Git (`main`) e realizar commit da Onda 0
 
+## Onda 0.5 — Benchmarks Visuais de Referência
+- [x] Inspecionar os 5 sites de referência (`integral-imi.com`, `tattooonda.com.br`, `apple.com`, `blog.google` Gemini 4 Hydrogen, `amd.com/pt.html`) no navegador
+- [x] Consolidar arquétipos e padrões de UX/conversão em `Context/benchmarks-visuais.md` e `criadores-de-site/.kiro/steering/benchmarks-visuais.md`
+- [x] Vincular catálogo de benchmarks ao `site-pesquisa-nichos` e validar no `kiro-cli`
+
 ## Próximas Ondas Planejadas
 - [ ] **Onda 1 — Core da Fábrica de Sites (`criadores-de-site/`):** scaffolding web (Next.js App Router + TypeScript + Tailwind + shadcn/ui), sistema de tokens por nicho e contrato de captura de leads
 - [ ] **Onda 2 — Piloto End-to-End (1º Nicho + Pacote Social Media):** gerar site completo de um nicho piloto + pacote editorial/prospecção correspondente via `Context/contrato-handoff-site-social.md`
