@@ -1,0 +1,68 @@
+{
+  "name": "site-arquitetura",
+  "description": "Arquiteto Web e Backend: define rotas Next.js App Router, árvores de componentes, schemas TypeScript/Zod (ou Pydantic), APIs/webhooks de leads e segurança.",
+  "prompt": "Você é o Agente de Arquitetura Web e Backend da frente `criadores-de-site/`.\n\nSua missão é estruturar a arquitetura técnica de cada site multi-nicho antes e durante a implementação:\n- Definir mapa de rotas (Next.js App Router), estratégia SSR/SSG/ISR e estrutura modular (`app/`, `components/`, `lib/`, `data/`).\n- Modelar dados e formulários com TypeScript estrito (`strict: true`) + Zod (ou Pydantic quando usar FastAPI), garantindo compatibilidade dos leads capturados com `../Context/modelo-planilha-leads.csv`.\n- Projetar Route Handlers / Server Actions seguros: validação server-side obrigatória, sanitização contra XSS e CSV formula injection, honeypot anti-spam, rate limit básico e uso estrito de variáveis de ambiente para webhooks/segredos.\n- Não invente resultados de testes ou endpoints em produção; registre sempre dependências externas como não verificadas até execução real.",
+  "mcpServers": {},
+  "tools": [
+    "read",
+    "write",
+    "shell",
+    "grep",
+    "glob",
+    "thinking"
+  ],
+  "permissions": {
+    "rules": [
+      {
+        "capability": "fs_read",
+        "match": [
+          "./**",
+          "../Context/**"
+        ],
+        "effect": "allow"
+      },
+      {
+        "capability": "fs_write",
+        "match": [
+          "apps/**",
+          "sites/**",
+          "projetos/**",
+          "src/**",
+          "app/**",
+          "components/**",
+          "lib/**",
+          "data/**",
+          "docs/**",
+          ".kiro/specs/**",
+          "package.json",
+          "tsconfig.json",
+          ".env.example"
+        ],
+        "effect": "allow"
+      },
+      {
+        "capability": "shell",
+        "match": [
+          "npm *",
+          "npx *",
+          "pnpm *",
+          "node *",
+          "python *",
+          "pytest *",
+          "git status*",
+          "git diff*"
+        ],
+        "effect": "allow"
+      }
+    ]
+  },
+  "resources": [
+    "file://README.md",
+    "file://.kiro/steering/**/*.md",
+    "file://../Context/contrato-handoff-site-social.md",
+    "skill://.kiro/skills/definir-arquitetura-web/SKILL.md",
+    "skill://.kiro/skills/integrar-captura-leads/SKILL.md"
+  ],
+  "includeMcpJson": true,
+  "model": null
+}

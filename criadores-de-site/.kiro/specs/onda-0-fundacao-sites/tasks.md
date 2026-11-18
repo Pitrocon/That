@@ -1,0 +1,25 @@
+# Tasks — Onda 0: Fundação da Frente Criadores de Site
+
+- [x] Criar `criadores-de-site/README.md` com visão multi-nicho, tabela de agentes, tabela de skills, comandos `kiro-cli` e contrato de handoff com Social Media.
+- [x] Criar steering files em `criadores-de-site/.kiro/steering/`:
+  - [x] `identidade-diversidade-visual.md` (`inclusion: always`)
+  - [x] `padroes-engenharia-site.md` (`inclusion: always`)
+  - [x] `checklist-qa-entrega.md` (`inclusion: always`)
+- [x] Criar as 6 skills exclusivas em `criadores-de-site/.kiro/skills/`:
+  - [x] `pesquisar-nicho-visual/SKILL.md`
+  - [x] `definir-arquitetura-web/SKILL.md`
+  - [x] `criar-secao-nicho/SKILL.md`
+  - [x] `integrar-captura-leads/SKILL.md`
+  - [x] `otimizar-seo-a11y/SKILL.md`
+  - [x] `validar-build-qa/SKILL.md`
+- [x] Criar os 5 agentes Kiro V3 em `criadores-de-site/.kiro/agents/`:
+  - [x] `site-pesquisa-nichos.json`
+  - [x] `site-arquitetura.json`
+  - [x] `site-frontend.json`
+  - [x] `site-design-seo.json`
+  - [x] `site-qa.json`
+- [x] Criar os 2 hooks em `criadores-de-site/.kiro/hooks/` (`version: "v1"`):
+  - [x] `site-lint-on-save.json`
+  - [x] `site-handoff-checklist.json`
+- [x] Documentar a spec inicial em `criadores-de-site/.kiro/specs/onda-0-fundacao-sites/` (`requirements.md`, `design.md`, `tasks.md`).
+- [x] Executar validação final: ausência de UTF-8 BOM em todos os `.json`, sintaxe JSON dos hooks, `kiro-cli agent validate --path` nos 5 agentes e `kiro-cli agent list` dentro de `criadores-de-site/`.

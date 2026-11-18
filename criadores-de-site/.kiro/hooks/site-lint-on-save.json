@@ -1,0 +1,14 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "site-lint-on-save",
+      "trigger": "PostFileSave",
+      "matcher": "\\.(ts|tsx|js|jsx)$",
+      "action": {
+        "type": "agent",
+        "prompt": "Verifique rapidamente o arquivo TS/JS salvo: (1) tipagem TypeScript estrita sem 'any' injustificado e imports válidos; (2) semântica HTML, acessibilidade (labels, alt, foco) e responsividade mobile-first em componentes React; (3) ausência de segredos expostos ao cliente ou dados fictícios tratados como produção."
+      }
+    }
+  ]
+}

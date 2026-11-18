@@ -1,0 +1,13 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "site-handoff-checklist",
+      "trigger": "Stop",
+      "action": {
+        "type": "agent",
+        "prompt": "Antes de concluir sua resposta, confirme que: (1) apenas resultados de comandos realmente executados (tsc, eslint, build, testes aplicáveis) foram reportados; (2) foi incluída uma seção explícita 'NÃO verificado' listando tudo o que não rodou em navegador real, dispositivo móvel ou ambiente externo; (3) se houver entrega aprovada para portfólio, os dados seguem o contrato '../Context/contrato-handoff-site-social.md'."
+      }
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "system_architecture": {
+    "project_goal": "Criação automatizada e otimizada de sites multi-nicho (ex: estúdios de tatuagem, músicos, serviços) com prospecção ativa e automação de vendas.",
+    "coordinator": {
+      "role": "Multi-Agent Coordinator (Orquestrador Geral)",
+      "responsibility": "Orquestrar e sincronizar todos os fluxos de trabalho entre as três equipes principais, garantindo que os dados de pesquisa alimentem tanto o desenvolvimento quanto o marketing."
+    },
+    "teams": [
+      {
+        "team_name": "Equipe 1: Pesquisa, Inteligência de Mercado e Prospecção",
+        "manager": {
+          "role": "Gerente de Pesquisa e Inteligência de Mercado",
+          "responsibility": "Supervisionar a prospecção de mercado, validar nichos lucrativos e garantir a diversidade visual e estrutural dos projetos."
+        },
+        "agents": [
+          {
+            "role": "Agente Pesquisador de Nichos e Requisitos",
+            "responsibility": "Mapear demandas específicas por nicho, público-alvo, referências de mercado (benchmarks) e estruturas ideais de páginas."
+          },
+          {
+            "role": "Agente de Diversidade e Tendências Visuais",
+            "responsibility": "Monitorar redes sociais (Instagram) e a web para garantir que os sites tenham paletas de cores, layouts e estruturas variadas, evitando padrões repetitivos."
+          },
+          {
+            "role": "Agente Analista de Demanda de Mercado",
+            "responsibility": "Identificar quais ramos e setores estão com maior demanda por criação de sites e maior potencial de fechamento."
+          },
+          {
+            "role": "Agente Validador de Pesquisa de Mercado",
+            "responsibility": "Auditar todas as pesquisas feitas pela equipe para minimizar erros, validar dados e garantir precisão antes de repassar ao gerente."
+          },
+          {
+            "role": "Agente de Geração e Planilhas de Leads",
+            "responsibility": "Captar clientes reais, extrair contatos diretos (perfis de Instagram, telefones, e-mails) e organizar tudo em uma planilha estruturada de leads."
+          }
+        ]
+      },
+      {
+        "team_name": "Equipe 2: Desenvolvimento e Qualidade (Engenharia Web)",
+        "manager": {
+          "role": "Gerente de Desenvolvimento",
+          "responsibility": "Coordenar os desenvolvedores e validadores de código, recebendo os relatórios de validação antes de encaminhar para o agente de saída."
+        },
+        "agents": [
+          {
+            "role": "Agente Desenvolvedor Frontend",
+            "responsibility": "Criar interfaces UI/UX responsivas, aplicando as cores, tipografias e estruturas diversas definidas pela pesquisa."
+          },
+          {
+            "role": "Agente Validador de Frontend",
+            "responsibility": "Revisar o código frontend, testar responsividade, fidelidade visual e usabilidade, reportando diretamente ao Gerente de Desenvolvimento."
+          },
+          {
+            "role": "Agente Desenvolvedor Backend",
+            "responsibility": "Implementar a lógica de negócios, APIs, bancos de dados, formulários e integrações de serviços."
+          },
+          {
+            "role": "Agente Validador de Backend",
+            "responsibility": "Testar rotas, segurança, performance, banco de dados e integrações do backend, reportando diretamente ao Gerente de Desenvolvimento."
+          },
+          {
+            "role": "Agente de SEO e Métricas",
+            "responsibility": "Otimizar o código, estrutura de tags, velocidade de carregamento e metadados para motores de busca (Google)."
+          },
+          {
+            "role": "Agente de Saída Final (QA Master)",
+            "responsibility": "Receber o projeto aprovado pelo Gerente de Desenvolvimento e realizar a auditoria completa de ponta a ponta antes da entrega final."
+          }
+        ]
+      },
+      {
+        "team_name": "Equipe 3: Marketing, Conteúdo e Automação de Vendas (Instagram)",
+        "manager": {
+          "role": "Gerente de Marketing e Engajamento",
+          "responsibility": "Gerenciar a presença no Instagram, o calendário de postagens e o funil de atendimento automático na DM."
+        },
+        "agents": [
+          {
+            "role": "Agente de Pesquisa de Conteúdo para Posts",
+            "responsibility": "Pesquisar exclusivamente temas em alta, formatos de posts virais e assuntos que geram engajamento no Instagram."
+          },
+          {
+            "role": "Agente Criador de Texto (Copywriter)",
+            "responsibility": "Redigir legendas persuasivas, textos de contexto dos posts, chamadas para ação (CTAs) e seleção estratégica de hashtags."
+          },
+          {
+            "role": "Agente Produtor de Imagens e Criativos",
+            "responsibility": "Gerar e estruturar as artes visuais, carrosséis e imagens das postagens alinhadas à identidade visual."
+          },
+          {
+            "role": "Agente de Automação de DM e Vendas (SDR)",
+            "responsibility": "Interagir automaticamente no Direct do Instagram, abordar leads da planilha, responder dúvidas, qualificar o interesse e conduzir para o fechamento."
+          }
+        ]
+      }
+    ]
+  }
+}
